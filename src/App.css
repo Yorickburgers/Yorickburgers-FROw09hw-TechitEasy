@@ -52,3 +52,12 @@ h3 {
     color: orangered;
     border-color: orangered;
 }
+
+#image {
+    border: none;
+}
+
+#bestSelling {
+    border: none;
+    text-align: left;
+}

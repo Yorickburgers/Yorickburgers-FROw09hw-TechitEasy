@@ -9,4 +9,4 @@ export function boughtTV() {
     return tvStock;
 }
 
-console.log(boughtTV());
+//console.log(boughtTV());

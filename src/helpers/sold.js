@@ -9,4 +9,4 @@ export function soldTV() {
     return numberTVsSold;
 }
 
-console.log(soldTV());
+//console.log(soldTV());
