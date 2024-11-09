@@ -4,6 +4,9 @@
     padding: 0;
 }
 
+#root {
+    margin: 30px;
+}
 .category {
     display: flex;
     flex-direction: column;
@@ -11,28 +14,31 @@
     justify-content: center;
     text-align: center;
     border: solid 1px;
-    margin: 20px;
+    padding: 20px;
+    min-height: 200px;
+}
+
+.category + .category {
+    margin-left: 20px;
 }
 
 .categoryWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 20px 0;
+    flex-wrap: nowrap;
 }
 
 .category p {
-    padding: 20px;
+    padding: 10px;
 }
 
 h1 {
-    margin-left: 20px;
     margin-top: 30px;
     margin-bottom: 30px;
-}
-
-h3 {
-    margin-left: 20px;
 }
 
 #sold {
@@ -57,7 +63,42 @@ h3 {
     border: none;
 }
 
+#image img {
+    max-width: 250px;
+}
+
+#bestSellingTV {
+    border: dashed 1px black;
+    background-color: lightgrey;
+    max-width: 900px;
+}
+
 #bestSelling {
     border: none;
-    text-align: left;
+    text-align: start;
+    justify-content: space-between;
+    height: 100%;
+}
+
+#bestSelling p, #bestSelling h3 {
+    width: 100%;
+    padding-left: 20px;
+}
+
+button + button {
+    margin-left: 20px
+}
+
+button {
+    border-radius: 20px;
+    color: white;
+    background-color: lightcoral;
+    padding: 10px;
+    border: solid 1px lightgrey;
+}
+
+button:hover {
+    color: lightcoral;
+    background-color: lightgrey;
+    cursor: pointer;
 }
