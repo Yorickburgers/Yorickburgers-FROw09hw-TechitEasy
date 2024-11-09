@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: solid 1px;
+    margin: 20px;
+}
+
+.categoryWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.category p {
+    padding: 20px;
+}
+
+h1 {
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    margin-left: 20px;
+}
+
+#sold {
+    background-color: palegreen;
+    color: seagreen;
+    border-color: seagreen;
+}
+
+#stock {
+    background-color: lightskyblue;
+    color: steelblue;
+    border-color: steelblue;
+}
+
+#toSell {
+    background-color: peachpuff;
+    color: orangered;
+    border-color: orangered;
+}
