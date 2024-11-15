@@ -5,9 +5,10 @@ import toSell from './helpers/sell.js'
 import tvString from './helpers/tvStringGenerator.js'
 import tvPrice from './helpers/priceStringGenerator.js'
 import {size} from './helpers/sizeStringGenerator.js'
-import {bestSellingTv} from './constants/inventory.js'
+import {bestSellingTv, inventory} from './constants/inventory.js'
 import check from './assets/check.png'
 import minus from './assets/minus.png'
+import {buttonLog} from "./helpers/button.js";
 
 function App() {
   return (
@@ -46,9 +47,15 @@ function App() {
                   </p>
               </div>
           </div>
-          <button type="button">Meest verkocht eerst</button>
-          <button type="button">Goedkoopste eerst</button>
-          <button type="button">Meest geschikt voor sport eerst</button>
+          <button type="button" onClick={() => buttonLog("Meest verkochte eerst")}>Meest verkocht eerst</button>
+          <button type="button" onClick={() => buttonLog("Goedkoopste eerst")}>Goedkoopste eerst</button>
+          <button type="button" onClick={() => buttonLog("Meest geschikt voor sport eerst")}>Meest geschikt voor sport eerst</button>
+
+          <ul>
+              {inventory.map((tv) => {
+                  return <li key={tv.type}>{tv.brand}</li>
+              })}
+          </ul>
       </>
   )
 }
