@@ -329,3 +329,43 @@ export let inventory = [
 ];
 
 
+// Opdracht 1
+console.log("Opdracht 1a");
+const tvTypes = inventory.map((tv) => {
+    return tv.type;
+});
+
+console.log(tvTypes);
+
+console.log("Opdracht 1b");
+const tvSoldOut = inventory.filter((tv) => {
+    return (tv.originalStock - tv.sold <1);
+});
+console.log(tvSoldOut);
+
+console.log("Opdracht 1c");
+const tvSpecific = inventory.find((tv) => {
+    return tv.type === "NH3216SMART";
+});
+console.log(tvSpecific);
+
+console.log("Opdracht 1d");
+const sportTV = inventory.map((tv) => {
+    if (tv.refreshRate >= 100) {
+        return {name: `${tv.brand} ${tv.name}`, suitable: true};
+    }
+    return {name: `${tv.brand} ${tv.name}`, suitable: false};
+});
+console.log(sportTV);
+
+console.log("Opdracht 1e");
+const largeTV = inventory.filter((tv) => {
+    return (tv.availableSizes.find((size) => size >= 65));
+});
+console.log(largeTV);
+
+console.log("Opdracht 1f");
+const ambiLightTV = inventory.filter((tv) => {
+    return tv.options.filter((option) => option.name === "ambiLight" && option.applicable === true).length > 0;
+});
+console.log(ambiLightTV);
