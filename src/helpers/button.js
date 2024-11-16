@@ -4,7 +4,7 @@ export function buttonLog(text) {
     console.log(text);
 }
 
-console.log("Opdracht 3a");
+//console.log("Opdracht 3a");
 export function mostSoldFirst() {
     const mostSoldFirstTV = inventory.sort((a, b) => {
         if (a.sold > b.sold) {
@@ -42,4 +42,17 @@ export function sortRefreshRate() {
        return 0;
     });
     console.log(highRefreshRateTV);
+}
+
+export function largestFirst() {
+    const largestTV = inventory.sort((a, b) => {
+        if (a.availableSizes[a.availableSizes.length - 1] > b.availableSizes[b.availableSizes.length - 1]) {
+            return -1;
+        }
+        if (a.availableSizes[a.availableSizes.length - 1] < b.availableSizes[b.availableSizes.length - 1]) {
+            return 1;
+        }
+        return 0;
+    });
+    console.log(largestTV);
 }

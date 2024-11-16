@@ -112,6 +112,7 @@ button {
     color: white;
     background-color: lightcoral;
     padding: 10px;
+    margin-top: 20px;
     border: solid 1px lightgrey;
 }
 

@@ -8,10 +8,12 @@ import {size} from './helpers/sizeStringGenerator.js'
 import {bestSellingTv, inventory} from './constants/inventory.js'
 import check from './assets/check.png'
 import minus from './assets/minus.png'
-import {buttonLog} from "./helpers/button.js";
+import soldOut from './assets/out-of-stock.png'
+//import {buttonLog} from "./helpers/button.js";
 import {mostSoldFirst} from "./helpers/button.js";
 import {cheapestFirst} from "./helpers/button.js";
 import {sortRefreshRate} from "./helpers/button.js";
+import {largestFirst} from "./helpers/button.js"
 
 function App() {
     return (
@@ -61,14 +63,15 @@ function App() {
             <h3>Alle tvs</h3>
             <button type="button" onClick={() => mostSoldFirst()}>Meest verkocht eerst</button>
             <button type="button" onClick={() => cheapestFirst()}>Goedkoopste eerst</button>
-            <button type="button" onClick={() => sortRefreshRate()}>Meest geschikt voor sport
-                eerst
-            </button>
+            <button type="button" onClick={() => sortRefreshRate()}>Meest geschikt voor sport eerst</button>
+            <button type="button" onClick={() => largestFirst()}>Grootste schermgroottes eerst</button>
             <span className="categoryWrapper" id="allTvsWrapper">
                 {inventory.map((tv) => {
-                    return <><span className="categoryWrapper" id="allTV">
+                    return <span className="categoryWrapper" id="allTV" key={tv.type}>
                 <div className="category" id="image">
-                    <img src={tv.sourceImg} alt={tvString(tv)}/>
+                    {(tv.originalStock - tv.sold === 0) ? (<img src={soldOut} alt="out of stock" />
+                    ) : (<img src={tv.sourceImg} alt={tvString(tv)}/>
+                    )}
                 </div>
                 <div className="category" id="bestSelling">
                     <p>{tvString(tv)}</p>
@@ -86,7 +89,7 @@ function App() {
                             }
                         })}</ul>
                 </div>
-            </span></>
+            </span>
                 })}
             </span>
 
