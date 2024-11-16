@@ -9,6 +9,9 @@ import {bestSellingTv, inventory} from './constants/inventory.js'
 import check from './assets/check.png'
 import minus from './assets/minus.png'
 import {buttonLog} from "./helpers/button.js";
+import {mostSoldFirst} from "./helpers/button.js";
+import {cheapestFirst} from "./helpers/button.js";
+import {sortRefreshRate} from "./helpers/button.js";
 
 function App() {
     return (
@@ -56,9 +59,9 @@ function App() {
                 </ul>
             </span>
             <h3>Alle tvs</h3>
-            <button type="button" onClick={() => buttonLog("Meest verkochte eerst")}>Meest verkocht eerst</button>
-            <button type="button" onClick={() => buttonLog("Goedkoopste eerst")}>Goedkoopste eerst</button>
-            <button type="button" onClick={() => buttonLog("Meest geschikt voor sport eerst")}>Meest geschikt voor sport
+            <button type="button" onClick={() => mostSoldFirst()}>Meest verkocht eerst</button>
+            <button type="button" onClick={() => cheapestFirst()}>Goedkoopste eerst</button>
+            <button type="button" onClick={() => sortRefreshRate()}>Meest geschikt voor sport
                 eerst
             </button>
             <span className="categoryWrapper" id="allTvsWrapper">
@@ -86,6 +89,7 @@ function App() {
             </span></>
                 })}
             </span>
+
         </>
     )
 }
