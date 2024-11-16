@@ -22,7 +22,8 @@
     margin-left: 20px;
 }
 
-.categoryWrapper {
+.categoryWrapper,
+.tvWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,6 +31,11 @@
     max-width: 900px;
     margin: 20px 0;
     flex-wrap: nowrap;
+}
+
+.tvWrapper {
+    display: flex;
+
 }
 
 .category p {
@@ -78,6 +84,17 @@ h1 {
     text-align: start;
     justify-content: space-between;
     height: 100%;
+}
+
+#allTvsWrapper {
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    min-width: 100%;
+}
+
+#allTV {
+    max-width: 900px;
 }
 
 #bestSelling p, #bestSelling h3 {

@@ -1,5 +1,3 @@
-import {bestSellingTv} from "../constants/inventory.js"
-
-const tvPrice = () => (`€${bestSellingTv.price},-`);
+const tvPrice = (tv) => (`€${tv.price},-`);
 //console.log(tvPrice());
 export default tvPrice;
