@@ -81,6 +81,7 @@ h1 {
 
 #bestSelling {
     border: none;
+    align-items: start;
     text-align: start;
     justify-content: space-between;
     height: 100%;
@@ -118,4 +119,13 @@ button:hover {
     color: lightcoral;
     background-color: lightgrey;
     cursor: pointer;
+}
+
+.tvOption {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+ul {
+    padding-left: 10px;
 }

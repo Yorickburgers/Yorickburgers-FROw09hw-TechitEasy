@@ -38,13 +38,13 @@ function App() {
                     <p>{tvString(bestSellingTv)}</p>
                     <h3>{tvPrice(bestSellingTv)}</h3>
                     <p>{size(bestSellingTv)}</p>
-                    <p>
-                        <img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> wifi
-                        <img src={minus} alt="Minus icon" style={{width: '15px', height: '15px'}}/> speech
-                        <img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> hdr
-                        <img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> bluetooth
-                        <img src={minus} alt="Minus icon" style={{width: '15px', height: '15px'}}/> ambiLight
-                    </p>
+                    <ul>
+                        <li className="tvOption"><img src={minus} alt="Minus icon" style={{width: '15px', height: '15px'}}/> speech</li>
+                        <li className="tvOption"><img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> wifi</li>
+                        <li className="tvOption"><img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> hdr</li>
+                        <li className="tvOption"><img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> bluetooth</li>
+                        <li className="tvOption"><img src={minus} alt="Minus icon" style={{width: '15px', height: '15px'}}/> ambiLight</li>
+                    </ul>
                 </div>
             </span>
             <h3>Beschikbare merken</h3>
@@ -71,16 +71,20 @@ function App() {
                     <p>{tvString(tv)}</p>
                     <h3>{tvPrice(tv)}</h3>
                     <p>{size(tv)}</p>
-                    <p>
-                        <img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> wifi
-                        <img src={minus} alt="Minus icon" style={{width: '15px', height: '15px'}}/> speech
-                        <img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> hdr
-                        <img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> bluetooth
-                        <img src={minus} alt="Minus icon" style={{width: '15px', height: '15px'}}/> ambiLight
-                    </p>
+                    <ul>
+                        {tv.options.map((option) => {
+                            if (option.applicable === true) {
+                                return <li key={option.name} className="tvOption"><img src={check} alt="Check icon" style={{width: '15px', height: '15px'}}/> {option.name}
+                                </li>
+                            }
+                            if (option.applicable === false) {
+                                return <li key={option.name} className="tvOption"><img src={minus} alt="Check icon" style={{width: '15px', height: '15px'}}/> {option.name}
+                                </li>
+                            }
+                        })}</ul>
                 </div>
             </span></>
-                })};
+                })}
             </span>
         </>
     )
